@@ -10,4 +10,4 @@ pipeline = gst.parse_launch("playbin2 uri=http://docs.gstreamer.com/media/sintel
 pipeline.set_state(gst.STATE_PLAYING)
 bus = pipeline.get_bus()
 bus.timed_pop_filtered(gst.CLOCK_TIME_NONE, gst.MESSAGE_ERROR | gst.MESSAGE_EOS)
-# gtk.main()
+pipeline.set_state(gst.STATE_NULL)
